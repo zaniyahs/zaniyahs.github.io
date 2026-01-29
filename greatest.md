@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/micromouse/micromouse-square.jpg
+image: img/gift.jpg
 title: "Giving back to the community"
 date: 2025
 published: true
