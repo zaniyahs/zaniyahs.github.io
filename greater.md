@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/micromouse/micromouse-square.jpg
+image: img/ball.png
 title: "Team Captain"
 date: 2022
 published: true
@@ -13,9 +13,7 @@ summary: "My high school basketball team won the trophy for our league."
 ---
 
 <div class="text-center p-4">
-  <img width="200px" src="../img/micromouse/micromouse-robot.png" class="img-thumbnail" >
-  <img width="200px" src="../img/micromouse/micromouse-robot-2.jpg" class="img-thumbnail" >
-  <img width="200px" src="../img/micromouse/micromouse-circuit.png" class="img-thumbnail" >
+  
 </div>
 
 When I joined the basketball team, the program was in a pretty rough spot. It had been over ten years since the school had even seen a final, so we were basically rebuilding from the ground up. My freshman year was all about the grind just me, the gym, and the fundamentals. I barely touched the floor during varsity games, but I was focused on just getting my foot in the door. By sophomore year, we were on our fourth coach in four years, which was exhausting, but this one actually stuck around. I finally started finding my groove on varsity, mostly because I realized I could be a nightmare on defense. There was nothing better than seeing a star ball-handler get visibly flustered as soon as I picked them up. We finished that season with a winning record, though I ended up fracturing my ankle in the final game, which was a tough way to go out.
