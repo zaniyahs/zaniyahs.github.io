@@ -13,9 +13,7 @@ summary: "I helped my unit plan the first ever military ball for our battalion."
 ---
 
 <div class="text-center p-4">
-  <img width="200px" src="../img/micromouse/micromouse-robot.png" class="img-thumbnail" >
-  <img width="200px" src="../img/micromouse/micromouse-robot-2.jpg" class="img-thumbnail" >
-  <img width="200px" src="../img/micromouse/micromouse-circuit.png" class="img-thumbnail" >
+  
 </div>
 
 When I first started at UH Mānoa, the Naval unit was still in that awkward "new kid" phase. It was only three years old, and we hadn’t even commissioned our first officer yet, so there was no "old guard" to tell us how things were supposed to look. Being a freshman in such a young program meant we weren't just joining a unit; we were basically the guinea pigs for every new tradition. It was a bit surreal realizing that everything we did—from how we ran drills to how we organized ourselves—was setting the tone for every student who would come after us.
