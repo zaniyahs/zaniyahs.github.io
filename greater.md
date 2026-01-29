@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/ball.png
+image: img/ball.PNG
 title: "Team Captain"
 date: 2022
 published: true
