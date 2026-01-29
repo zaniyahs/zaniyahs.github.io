@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/image.jpeg
+image: img/image.jpg
 title: "Dining Out"
 date: 2023
 published: true
