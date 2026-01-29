@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: img/gift.jpg
+image: img/gifts.png
 title: "Giving back to the community"
 date: 2025
 published: true
