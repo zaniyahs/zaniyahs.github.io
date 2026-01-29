@@ -9,7 +9,7 @@ labels:
   - Security
 ---
 
-<">
+
 My interest in software engineering is driven by a focus on the structural integrity and security of digital systems. While many are drawn to the creative side of front-end design, I am fascinated by the "defensive" side of development. In an era where data breaches and system vulnerabilities have real-world consequences, I believe that building secure code is the most critical responsibility an engineer has. I want to develop the expertise to not only write functional software but to build systems that are resilient against exploitation and designed with a security-first mindset.
 
 To achieve this, I am focused on mastering the fundamentals of back-end development and systems architecture. I want to gain deep technical experience in languages like C and Python, which are essential for understanding how software interacts with hardware and how to identify memory-safety issues. Beyond the code itself, I hope to develop skills in network security and ethical hacking. My goal is to understand the mind of an attacker so that I can better architect defenses, moving beyond simple patches to creating robust, "lockdown" infrastructures from the initial design phase.
