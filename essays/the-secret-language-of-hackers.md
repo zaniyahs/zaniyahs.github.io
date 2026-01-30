@@ -1,14 +1,14 @@
 ---
 layout: essay
 type: essay
-title: "The secret language of hackers"
+title: "The Secret Language of Hackers"
 # All dates must be YYYY-MM-DD format!
 date: 2026-01-29
 published: true
 labels:
   - Smart questions
   - Not so smart questions
-   ---
+---
 In the world of software engineering, time is the most expensive currency. When you’re stuck on a complex bug or a cryptic error message, the first instinct is often to shout for help into the digital void of Stack Overflow. However, there is an art to "shouting" that separates the juniors from the seniors. This art is defined by Eric S. Raymond as asking "Smart Questions." 
 
 Being a high-performing software engineer isn't just about writing efficient code; it's about being an efficient communicator. By following a specific set of precepts—conducting preliminary research, providing a minimal reproducible example, and maintaining technical precision—you don't just get faster answers; you build a professional persona that experts actually respect.
