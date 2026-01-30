@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: "Defending the Digital Frontier"
+title: "The secret language of hackers"
 # All dates must be YYYY-MM-DD format!
 date: 2026-01-29
 published: true
