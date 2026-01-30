@@ -2,6 +2,7 @@
 layout: essay
 title: "The Secret Language of Hackers: Why Your Question is Your Reputation"
 date: 2026-01-29
+published: true
 labels: [Software Engineering, Stack Overflow, Professionalism]
 ---
 
