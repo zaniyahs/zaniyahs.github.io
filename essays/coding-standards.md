@@ -1,7 +1,7 @@
 ---
 layout: essay
 title: "Reflecting on coding standards"
-date: 2026-02-12
+date: 2026-02-11
 published: true
 labels:
   - Software Engineering
