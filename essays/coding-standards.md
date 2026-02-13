@@ -8,6 +8,7 @@ labels:
   - TypeScript
   - ICS 314
 ---
+![](../img/ES-Lint-photo.png)
 # Why Coding Standards Matter
 
 Let's be honest: most people hate being told where to put a semicolon. The moment you mention "coding standards," eyes roll and developers groan about petty arguments over tabs versus spaces or whether curly braces deserve their own line well, I could be speaking for myself but that is my reaction every time. It feels downright annoying. But here's the contrarian take: coding standards aren't just about formatting aesthetics. They're training wheels for professional code that actually works in the real world. Stick with me now. When I first integrated ESLint into my VSCode workflow, I didn't see it as a tyrannical style enforcer. Instead, I saw it as a mentor that would catch me before I fell. And after a week of working with it, I can confidently say that if you can only implement one software engineering technique to improve quality, coding standards should be it.
