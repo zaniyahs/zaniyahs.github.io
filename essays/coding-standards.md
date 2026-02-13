@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title:"Reflecting on coding standards"
+title: "Reflecting on coding standards"
 # All dates must be YYYY-MM-DD format!
 date: 2026-02-11
 published: true
