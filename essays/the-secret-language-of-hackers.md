@@ -2,7 +2,6 @@
 layout: essay
 type: essay
 title: "The Secret Language of Hackers"
-# All dates must be YYYY-MM-DD format!
 date: 2026-01-29
 published: true
 labels:
