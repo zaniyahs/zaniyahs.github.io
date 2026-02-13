@@ -2,6 +2,7 @@
 layout: essay
 title: "Reflecting on coding standards"
 date: 2026-02-12
+published: true
 labels:
   - Software Engineering
   - ESLint
