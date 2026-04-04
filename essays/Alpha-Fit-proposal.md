@@ -13,7 +13,7 @@ labels:
 ---
 
 
-<img class="img-fluid" src="../images/goo.jpeg">
+![](../images/goo.jpeg)
 
 ## Overview
 
