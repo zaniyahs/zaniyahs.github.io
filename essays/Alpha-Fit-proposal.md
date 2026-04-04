@@ -13,7 +13,7 @@ labels:
 ---
 
 
-![Image description][(../images/goo.jpeg)](https://github.com/zaniyahs/zaniyahs.github.io/blob/main/img/goo.jpeg?raw=true)
+<img class="img-fluid" src="../images/goo.jpeg">
 
 ## Overview
 
