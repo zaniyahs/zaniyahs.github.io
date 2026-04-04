@@ -13,7 +13,7 @@ labels:
 ---
 
 
-![](../images/goo.jpeg)
+![Navy PRT](../img/goo.jpeg)
 
 ## Overview
 
