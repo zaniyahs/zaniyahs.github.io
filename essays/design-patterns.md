@@ -81,3 +81,5 @@ Design patterns aren't magic, and they're not always the right tool. Overusing t
 In my own project, three patterns quietly held everything together. The Singleton kept the database connection sane. Component-Based Architecture kept the UI flexible and maintainable. The Repository Pattern, embodied by Prisma, kept the data layer clean and decoupled. None of them were accidental. Each was a deliberate choice — a blueprint selected because it fit the problem.
 
 And that, in the end, is what design patterns are really about: not cleverness for its own sake, but intentional, communicable, time-tested craftsmanship.
+
+*AI was used to correct grammar and make essay sound more professional*
