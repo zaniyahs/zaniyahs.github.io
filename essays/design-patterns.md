@@ -15,6 +15,10 @@ There's a moment in every developer's journey when you realize you've solved the
 
 That's what design patterns are: named, reusable solutions to problems that appear over and over again in software development. They're not copy-paste code snippets. They're more like architectural blueprints — the kind a contractor uses not to dictate exactly where every nail goes, but to communicate a proven structural approach. When an architect says "we're using an open floor plan," every contractor on the crew immediately understands the tradeoffs: more light, less privacy, shared acoustics. Design patterns work the same way.
 
+<img src="../img/blueprint.jpeg" 
+     alt="Blueprint architecture" 
+     style="width: 100%; border-radius: 8px; margin: 1.5rem 0;">
+
 > "Design Patterns: Elements of Reusable Object-Oriented Software" — published in 1994 by the Gang of Four — catalogued 23 patterns across three families: Creational, Structural, and Behavioral. Decades later, the vocabulary has only grown richer.
 
 ## One Instance to Rule Them All
