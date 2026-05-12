@@ -9,3 +9,106 @@ labels:
   - AI
   - ICS 314
 ---
+
+<img src="../img/ai.jpeg" 
+     alt="Blueprint architecture" 
+     style="width: 100%; border-radius: 8px; margin: 1.5rem 0;">
+
+
+# Reflection of AI usage
+**By Za'Niyah Smith**
+
+---
+
+## I. Introduction
+
+Artificial intelligence has quietly become one of the most transformative forces in education, and software engineering is no exception. Where students once spent hours digging through books, Reddit threads and outdated videos, AI tools now offer instant, conversational guidance that can meet you exactly where you are. For a field as fast moving and hands on as software engineering, that shift is significant.
+
+In ICS 314, I used AI more than I though I would. The two tools I used most consistently were **Claude** (by Anthropic) and **ChatGPT** (by OpenAI). Neither replaced the learning process for me but both became important parts of how I worked through challenges, checked my understanding, and kept moving when I hit walls. This essay is my honest account of how, when, and why I used them.
+
+---
+
+## II. Personal Experience with AI
+
+### Practice WODs 
+For Practice WODs, my default approach was to try the task myself first. I wanted to at least understand what was being asked before reaching for help. But if I was too tired from work or genuinely couldn't see a path forward, I'd turn to Claude or ChatGPT to get unstuck. I didn't use AI to just hand me the answer I used it to get far enough along that I could finish on my own. This approach worked well in a hurry but it did not allow me retain the information. At one point I felt like I was stuck between turning in the assignment on time using AI or doing it myself but turning it in late. I fell into what felt like a trap and before I knew it I was using AI before trying it on my own and I thought to myself "I've done a few assignments but I haven't learned anything". I knew then that it was time to stop relying on AI and get back on track before I completely fall behind mentally. 
+
+### In-Class WODs
+This is where AI let me down most, it wasn't entirely the tool's fault. During one in class WOD, I got stuck on a problem and typed my question into ChatGPT. The response was taking too long to load. I waited, watched the clock, and eventually had to abandon the AI and try to work through it myself. I ran out of time and didn't finish the WOD. It was frustrating, but it was also a useful reminder: AI is a resource, not a safety net. If the connection lags or the model is slow, you still need to be able to think on your own. I walked away from that WOD with a healthier respect for building genuine understanding, not just access to tools.
+
+### Essays
+I wrote all of my essays myself. Every word started as my own typed out from my own thoughts and experiences. Where AI came in was at the end of the process once I had a full draft, I'd paste it into Claude and ask it to check my grammar and clean up any awkward phrasing. I thought of it less like using AI to write and more like using proofreader. The content stayed mine and this felt like the right balance for academic writing.
+
+### Final Project
+For Rainbow Locator, Claude became my go to debugging partner. My main role was front end design, and one of the most useful prompts I typed was something like: *"Tell me how to make a red delete button that's not too bright I want a cautionary red that feels intentional but not alarming."* Claude gave me a specific hex value and explained the reasoning behind it, which helped me understand color theory in a practical context rather than just guessing until something looked right.
+
+Beyond color choices, I also used Claude when my code wasn't behaving as expected. I'd paste in a snippet and describe what it was supposed to do versus what it was actually doing, then ask what was wrong. Most of the time, Claude identified the issue quickly and explained it in a way I could actually understand not just fix and forget, but learn and move on.
+
+### Learning a Concept / Tutorial
+When a new concept wasn't clicking from the course materials alone, I'd ask Claude or Chat GPT to explain it to me as if I was a 5th grader. I found this especially helpful for JavaScript concepts that felt abstract at first. Rather than reading tons of big words that didn't click right away AI found ways to dumb it down so that I can get a better explanation and then flip it around to the more intelligent way of understanding. 
+
+### Answering a Question in Class or in Discord
+I didn't typically use AI to answer questions in class or on Discord. Those felt like moments where the point was genuine engagement either I knew the answer or I didn't, and both were fine. Using AI in that context felt like a "try hard" moment. 
+
+### Asking or Answering a Smart Question
+I did not ask or answer any Smart Questions because most of the time the answer was already in the chat.
+
+### Coding Example (e.g. "give an example of using Underscore .pluck")
+Yes, I used AI for this fairly often. When I needed to see how a function or method worked in practice, asking for a quick example was faster and more targeted than searching through documentation. I'd ask something like "show me a simple example of how this works" and use the output as a starting point to understand the syntax before applying it to my actual task.
+
+### Explaining Code
+When I encountered code I didn't fully understand I'd paste it into Claude or Chat GPT and it to break it down for me. This was one of the most genuinely useful applications. It saved time and helped me build comprehension rather than just copying patterns I didn't understand.
+
+### Writing Code
+I used AI to help write code when I had a clear idea of what I wanted but wasn't sure how to implement it syntactically. I'd describe the goal and ask for a starting structure, then modify it to fit the project. I was careful not to paste AI-generated code directly without reviewing it first partly because it sometimes didn't fit our codebase and partly because I wanted to understand what I was adding.
+
+### Documenting Code
+I used Claude to help draft comments and documentation for code I had written. I'd paste the function and ask it to write a concise description of what it does. This saved time on a task that's easy to skip but important for maintainability.
+
+### Quality Assurance
+Pasting broken code into AI for debugging was one of my most frequent uses. I'd include the error message or describe the unexpected behavior and ask "what's wrong here." The majority of the time, Claude identified the issue accurately and explained why it was happening. Occasionally the fix it suggested didn't quite apply to my specific setup and I had to adapt it, but even then the explanation pointed me in the right direction.
+
+### Other Uses
+Outside of the categories above, I used AI generally as a confidence check. Before submitting work, I'd sometimes describe what I had done and ask if my approach made sense. Not to get validation, but to catch anything I might have missed. It functioned like a second pair of eyes.
+---
+
+## III. Impact on Learning and Understanding
+
+Using AI heavily in this course shaped my learning in ways I didn't fully anticipate. On the positive side, it significantly lowered the barrier to getting unstuck. In a fast-paced course with timed assessments and a complex final project, being able to get a quick, relevant explanation kept momentum going in a way that waiting for office hours couldn't always provide.
+
+That said, the in-class WOD experience was a real wake-up call. When AI wasn't available or was too slow I had nothing to fall back on. It made me realize that relying heavily on AI without building genuine foundational understanding is a fragile strategy. The best learning happened when I used AI *after* trying something myself, not instead of it.
+
+---
+
+## IV. Practical Applications
+
+Rainbow Locator itself was a practical application a real tool built for real students at UH. AI played a supporting role throughout that process, helping with everything from visual design decisions to code debugging. Outside of ICS 314, I only use AI for lifestyle things such as meal plans and workout plans.
+---
+
+## V. Challenges and Opportunities
+
+The biggest challenge I encountered was AI latency at the worst possible moment during a timed WOD. That experience exposed a real limitation: AI tools are dependent on connectivity and response time, which can't always be guaranteed. There's also the challenge of learning to evaluate AI output critically. Not every suggestion is correct or contextually appropriate, and developing that judgment takes practice.
+
+The opportunity, though, is significant. AI could be more formally integrated into software engineering education as a tool to teach problem decomposition not "here's the answer" but "here's how to think about this type of problem." That framing would help students use AI in a way that builds skills rather than bypassing them.
+
+---
+
+## VI. Comparative Analysis
+
+Traditional teaching methods such as lectures, readings, and office hours provide structure and depth that AI alone can't replicate. A professor explaining a concept in context, responding to the room's confusion in real time, offers something qualitatively different from a chatbot. But sometimes we are to embarrassed to ask for help or we don't know exactly what to ask. AI fills this gap. The most effective approach, in my experience, is the one I tried to follow attempt first, AI second. Traditional methods build the foundation. AI helps you build faster once the foundation is there.
+
+---
+
+## VII. Future Considerations
+
+AI in software engineering education is only going to become more embedded, not less. The question isn't whether students will use it they already do but how courses are designed around that reality. I think future courses could benefit from explicit guidance on *how* to use AI productively: how to write a good prompt, how to evaluate output, how to avoid over-reliance. Treating AI literacy as a skill, not a cheat code, would prepare students better for a professional environment where these tools are standard.
+
+---
+
+## VIII. Conclusion
+
+AI made me a more efficient student in ICS 314. It helped me debug faster, understand concepts more clearly, and produce cleaner work. But the moments where I learned the most were the ones where I pushed through without it first. The failed WOD, as frustrating as it was, taught me something no successful AI response ever did: that I need to be able to think independently, even when every tool I rely on is temporarily unavailable.
+
+My recommendation for future students is simple use AI, but use it as a thinking partner, not a substitute for thinking. The goal of this course isn't to produce code. It's to produce engineers. Those aren't the same thing, and the difference lives in the moments when you have to figure something out on your own.
+
+---
