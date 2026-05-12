@@ -4,7 +4,7 @@ type: essay
 title: "My Honest Experience with Effort Tracking on Rainbow Locator"
 # All dates must be YYYY-MM-DD format!
 date: 2026-05-11
-published: true
+published: false
 labels:
   - Software Engineering
   - Nextjs
