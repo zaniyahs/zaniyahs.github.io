@@ -12,6 +12,10 @@ labels:
   - Bootstrap 5
 ---
 
+<img src="../img/effort.png" 
+     alt="Blueprint architecture" 
+     style="width: 100%; border-radius: 8px; margin: 1.5rem 0;">
+
 # Estimating the Unestimatable: My Honest Experience with Effort Tracking on Rainbow Locator
 
 **By Za'Niyah Smith**
