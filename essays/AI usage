@@ -1,14 +1,15 @@
----
 layout: essay
 type: essay
-title: "AI usage"
-# All dates must be YYYY-MM-DD format!
+title: "My Honest Reflection on Using AI in ICS 314"
+All dates must be YYYY-MM-DD format!
 date: 2026-05-11
 published: true
 labels:
-  - AI
-  - ICS 314
----
+
+AI
+ICS 314
+Software Engineering
+
 
 <img src="../img/ai.jpeg" 
      alt="Blueprint architecture" 
