@@ -1,3 +1,17 @@
+---
+layout: essay
+type: essay
+title: "My Honest Experience with Effort Tracking on Rainbow Locator"
+# All dates must be YYYY-MM-DD format!
+date: 2026-05-11
+published: true
+labels:
+  - Software Engineering
+  - Nextjs
+  - React
+  - Bootstrap 5
+---
+
 # Estimating the Unestimatable: My Honest Experience with Effort Tracking on Rainbow Locator
 
 **By Za'Niyah Smith**
