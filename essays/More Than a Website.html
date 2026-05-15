@@ -1,1 +1,479 @@
+---
+layout: essay
+type: essay
+title: More Than a Website
+date: 2026-05-14
+published: true
+labels:
+  - Software Engineering
+  - Agile Project Management
+  - Design Patterns
+  - UI Frameworks
+---
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f0e0d;
+      --paper: #f5f1eb;
+      --accent: #2a6496;
+      --accent-soft: #d0e4f0;
+      --muted: #7a7068;
+      --code-bg: #1e1e1e;
+      --code-fg: #d4d4d4;
+      --rule: #d6cfc4;
+      --callout-bg: #f0f6fb;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      padding: 5rem 2rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .kicker::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.6rem;
+    }
+
+    h1 em { font-style: italic; color: var(--accent); }
+
+    .byline {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 6rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-top: 2.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    p { margin-bottom: 1.4rem; color: var(--ink); }
+
+    strong { font-weight: 500; }
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .callout {
+      background: var(--callout-bg);
+      border-left: 3px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout p { margin: 0; font-size: 0.95rem; }
+    .callout strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+
+    .concept-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.4rem;
+    }
+    .concept-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+    .concept-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .concept-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .idpm-board {
+      background: #1e2530;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2.5rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .board-col h5 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b8ab0;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #2d3748;
+    }
+    .board-issue {
+      background: #2d3748;
+      border-radius: 4px;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.72rem;
+      color: #e2e8f0;
+      line-height: 1.4;
+    }
+    .board-issue .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      color: #6b8ab0;
+      display: block;
+      margin-top: 0.3rem;
+    }
+    .board-issue.done { opacity: 0.5; }
+
+    figcaption {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .pattern-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+    }
+    .pattern-card h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--ink);
+    }
+    .pattern-card .context {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .pattern-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .three-col { grid-template-columns: 1fr; }
+      .idpm-board { grid-template-columns: 1fr; }
+      .pattern-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">ICS 314 — Software Engineering Reflection</div>
+  <h1>More Than a Website: What ICS 314 <em>Actually</em> Taught Me</h1>
+  <div class="byline">
+    <span>Za'Niyah Smith</span>
+    <span>May 2026</span>
+    <span>University of Hawaiʻi at Mānoa</span>
+  </div>
+</header>
+
+<main>
+
+  <h2>Introduction</h2>
+
+  <p>
+    When I first signed up for ICS 314, I assumed I was signing up to learn how to build websites. And yes,
+    by the end of the semester I could build a web application — but that turns out to be the smallest part
+    of what this course actually taught me. The real lessons were about <em>how</em> to think about building
+    anything: how to organize work, how to design systems that don't fall apart, and how to write code that
+    other people can actually understand and build on.
+  </p>
+
+  <p>
+    Three concepts in particular stuck with me well beyond the browser. None of them are exclusive to web
+    development, and understanding them that way changed how I see software engineering as a discipline.
+  </p>
+
+  <div class="three-col">
+    <div class="concept-card">
+      <div class="icon">🎨</div>
+      <h4>UI Frameworks</h4>
+      <p>Building polished interfaces faster using reusable, consistent components.</p>
+    </div>
+    <div class="concept-card">
+      <div class="icon">📋</div>
+      <h4>Agile Project Management</h4>
+      <p>Breaking large work into small, trackable pieces with clear ownership.</p>
+    </div>
+    <div class="concept-card">
+      <div class="icon">🧩</div>
+      <h4>Design Patterns</h4>
+      <p>Reaching for proven solutions instead of reinventing the wheel every time.</p>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <h2>User Interface Frameworks: Saving Time Without Sacrificing Quality</h2>
+
+  <p>
+    A <strong>User Interface (UI) framework</strong> is a pre-built collection of tools, styles, and components
+    that developers use to build the visual parts of an application without starting from scratch every time.
+    Instead of writing every button, every layout, and every responsive behavior by hand, a UI framework gives
+    you a head start with consistent, tested building blocks.
+  </p>
+
+  <p>
+    In ICS 314, we worked with <strong>Bootstrap</strong>, and it genuinely changed how I think about design
+    work. Before Bootstrap, I assumed that making something look good required writing enormous amounts of
+    custom code. Bootstrap showed me that a well-structured framework lets you build a polished,
+    professional-looking interface in a fraction of the time. That matters — not just aesthetically, but
+    practically. Time saved on styling is time you can spend on functionality, testing, or planning.
+  </p>
+
+  <div class="callout">
+    <strong>Key Insight</strong>
+    <p>
+      The deeper lesson wasn't just "Bootstrap is fast." It was about <strong>components</strong> — reusable,
+      self-contained pieces of a UI that can be plugged in wherever needed. Instead of copying and pasting the
+      same dropdown code across fifteen pages, you wrap it into a component and call it once. Everything looks
+      the same, works the same, and if you need to change it, you change it in one place.
+    </p>
+  </div>
+
+  <p>
+    That idea — break something down into a reusable unit, then deploy it consistently — applies far beyond
+    web pages. It applies to any system where repetition and consistency matter: document templates,
+    presentation slide decks, even military briefing formats. The tool changes, but the thinking doesn't.
+  </p>
+
+  <hr class="rule" />
+
+  <h2>Agile Project Management: Breaking Big Things Into Small Ones</h2>
+
+  <p>
+    <strong>Agile Project Management</strong> is a philosophy for managing complex work by breaking it into
+    small, manageable pieces rather than trying to plan and execute everything at once. Instead of laying out
+    a massive plan at the start and hoping nothing changes, Agile teams work in short cycles, reassess
+    frequently, and adapt as they learn more.
+  </p>
+
+  <p>
+    In ICS 314, we practiced a specific style called <strong>Issue Driven Project Management (IDPM)</strong>.
+    Every piece of work becomes a discrete "issue" on a project board. Each issue has a clear description,
+    an owner, a time estimate, and a status. Nothing exists as a vague obligation floating in someone's head.
+    Everything is visible, trackable, and assigned.
+  </p>
+
+  <figure>
+    <div class="idpm-board">
+      <div class="board-col">
+        <h5>To Do</h5>
+        <div class="board-issue">Set up admin login page<span class="tag">Est: 2hr · Za'Niyah</span></div>
+        <div class="board-issue">Style item cards<span class="tag">Est: 1hr · Za'Niyah</span></div>
+      </div>
+      <div class="board-col">
+        <h5>In Progress</h5>
+        <div class="board-issue">Build found item form<span class="tag">Est: 1.5hr · Team</span></div>
+      </div>
+      <div class="board-col">
+        <h5>Done</h5>
+        <div class="board-issue done">Add delete button<span class="tag">Est: 0.5hr · Actual: 10min</span></div>
+        <div class="board-issue done">Landing page layout<span class="tag">Est: 2hr · Actual: 1.5hr</span></div>
+      </div>
+    </div>
+    <figcaption>Fig. 1 — A sample IDPM board similar to what our team used for Rainbow Locator. Every task is visible, owned, and time-estimated.</figcaption>
+  </figure>
+
+  <p>
+    This was one of the most practically useful things I learned all semester — and it has nothing to do with
+    web applications specifically. The reason group projects fall apart is almost always the same: work is
+    distributed informally, accountability is unclear, and no one has a shared picture of what's done and
+    what isn't. IDPM solves exactly that problem.
+  </p>
+
+  <div class="callout">
+    <strong>Beyond Code</strong>
+    <p>
+      In NROTC, planning a unit evolution or a community event involves the same challenge: multiple people,
+      multiple tasks, a deadline, and the constant risk of things slipping through the cracks. A project board
+      with clearly defined issues, owners, and statuses would work just as well there as on GitHub. The tool
+      might be a whiteboard or a shared spreadsheet — but the <em>thinking</em> is identical.
+    </p>
+  </div>
+
+  <p>
+    That's what I know I'll carry forward: not GitHub specifically, but the habit of decomposing large work
+    into small, time-boxed chunks instead of staring at the whole mountain and feeling overwhelmed.
+  </p>
+
+  <hr class="rule" />
+
+  <h2>Design Patterns: Solved Problems You Don't Have to Solve Again</h2>
+
+  <p>
+    A <strong>design pattern</strong> is a reusable solution to a problem that comes up repeatedly in software
+    development. The term was popularized by the so-called "Gang of Four" — four authors who catalogued common
+    patterns for how objects in a program communicate and distribute responsibility. The underlying model is that
+    a program is essentially a graph of objects sending messages to each other, and design patterns are proven
+    ways to structure those relationships so they stay organized.
+  </p>
+
+  <p>
+    In simpler terms: a design pattern is a named, well-understood approach to a recurring problem. Instead of
+    reinventing the wheel every time, you reach for a known solution with known tradeoffs. The name alone
+    communicates the approach to anyone familiar with it — which makes collaboration faster and code easier
+    to read.
+  </p>
+
+  <div class="pattern-grid">
+    <div class="pattern-card">
+      <div class="context">In Software</div>
+      <h4>Observer Pattern</h4>
+      <p>When one part of a system changes, all dependent parts are notified automatically — without them being tightly coupled together.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="context">In Military Planning</div>
+      <h4>Operations Order Template</h4>
+      <p>A standardized format for issuing orders — situation, mission, execution, sustainment, command — that any officer can read and act on immediately.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="context">In Software</div>
+      <h4>Component Pattern</h4>
+      <p>Wrap repeated UI elements into a single reusable unit. Change it once, and the change propagates everywhere it's used.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="context">In Architecture</div>
+      <h4>Structural Load Patterns</h4>
+      <p>Proven approaches to how buildings distribute weight — arches, cantilevers, trusses — that architects reach for rather than deriving from first principles every time.</p>
+    </div>
+  </div>
+
+  <p>
+    The Gang of Four didn't invent the idea of reusable solutions to recurring problems — they just formalized
+    it for software. Every discipline that deals with complexity develops its own patterns. Understanding that
+    made me a more thoughtful developer. Instead of asking "how do I make this work," I started asking "has
+    someone solved this kind of problem before, and what did they learn?" That question is useful anywhere.
+  </p>
+
+  <hr class="rule" />
+
+  <h2>Conclusion</h2>
+
+  <p>
+    ICS 314 taught me to build a web application, but more importantly it taught me how to think like a
+    software engineer. UI Frameworks taught me to work efficiently with reusable components instead of
+    reinventing everything from scratch. Agile Project Management — specifically Issue Driven Project
+    Management — taught me to break large, overwhelming work into small, trackable pieces with clear
+    ownership and honest time estimates. Design Patterns taught me to recognize recurring problems and reach
+    for proven solutions rather than starting from zero every time.
+  </p>
+
+  <p>
+    None of these ideas live only in a browser. They're ways of thinking about complexity, collaboration,
+    and craft that I expect to keep using long after I've forgotten the specific syntax of any particular
+    framework. That, more than any line of code I wrote this semester, feels like the real education.
+  </p>
+
+</main>
+</body>
+</html>
