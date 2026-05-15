@@ -1,1 +1,402 @@
+---
+layout: essay
+type: essay
+title: "Final Project Proposal: Alpha Fit"
+# All dates must be YYYY-MM-DD format!
+date: 2026-04-01
+published: true
+labels:
+  - Software Engineering
+  - Nextjs
+  - React
+  - Bootstrap 5
+---
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f0e0d;
+      --paper: #f5f1eb;
+      --accent: #2a6496;
+      --accent-soft: #d0e4f0;
+      --muted: #7a7068;
+      --rule: #d6cfc4;
+      --callout-bg: #f0f6fb;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      padding: 5rem 2rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .kicker::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.6rem;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+
+    .byline {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 6rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    p { margin-bottom: 1.4rem; color: var(--ink); }
+    em { font-style: italic; }
+    strong { font-weight: 500; }
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .callout {
+      background: var(--callout-bg);
+      border-left: 3px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout p { margin: 0; font-size: 0.95rem; }
+    .callout strong {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 2rem 0;
+      display: block;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+
+    .page-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.3rem 1.4rem;
+    }
+    .page-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .page-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .use-case-list {
+      margin: 2.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .use-case {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.3rem 1.5rem;
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .use-case .icon {
+      font-size: 1.4rem;
+      margin-top: 0.1rem;
+    }
+    .use-case h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .use-case p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .future-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .future-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+    }
+    .future-card h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+    .future-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .page-grid { grid-template-columns: 1fr; }
+      .future-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">ICS 314 — Final Project Proposal</div>
+  <h1>Final Project Proposal: <em>Alpha Fit</em></h1>
+  <div class="byline">
+    <span>Za'Niyah Smith</span>
+    <span>April 2026</span>
+    <span>University of Hawaiʻi at Mānoa</span>
+  </div>
+</header>
+
+<main>
+
+  <img src="../img/goo.jpeg" alt="Navy PRT" class="hero-img" />
+
+  <h2>Overview</h2>
+
+  <p>
+    Maintaining peak physical readiness is not optional in the military — it is a non-negotiable standard
+    woven into the fabric of officer development. For Midshipmen in the Naval Reserve Officers' Training
+    Corps (NROTC) at the University of Hawaiʻi at Mānoa, this means regularly preparing for and executing
+    the Physical Readiness Test (PRT). Yet despite the high stakes, most midshipmen track their fitness
+    progress through informal spreadsheets, handwritten notes, or simple memory. Alpha Fit changes that.
+  </p>
+
+  <hr class="rule" />
+
+  <h2>The Problem</h2>
+
+  <p>
+    The Navy PRT consists of three scored events — push-ups, a timed plank hold, and a 1.5-mile run
+    evaluated against age and gender standards. Scores directly influence a Midshipman's academic standing,
+    scholarship eligibility, and ultimately their ability to commission as a Naval or Marine Corps officer.
+  </p>
+
+  <div class="callout">
+    <strong>The Gap</strong>
+    <p>
+      The problem is not a lack of motivation among Midshipmen. It's a lack of the right tools. There is no
+      centralized system where a midshipman can log a mock PRT result, immediately see where that score falls
+      relative to the "Outstanding," "Excellent," "Good," or "Satisfactory" standards, and understand
+      <em>why</em> they are struggling, let alone <em>what to do about it</em>. The current approach is
+      disjointed and reactive. Alpha Fit is designed to fix that.
+    </p>
+  </div>
+
+  <hr class="rule" />
+
+  <h2>The Solution</h2>
+
+  <p>
+    Alpha Fit is a centralized web application built specifically for the UH Mānoa NROTC community using
+    Next.js, React, Bootstrap 5, and hosted on GitHub. It provides a streamlined, mobile accessible platform
+    where midshipmen can take ownership of their fitness journey in a structured, data driven way.
+  </p>
+
+  <p>
+    The "special sauce" of Alpha Fit is its deeply personalized user experience. When a Midshipman logs in,
+    they access a custom dashboard displaying their historical PRT data across all three events, visualizing
+    their score trajectory and situating their current status within official Navy readiness categories. Most
+    powerfully, Alpha Fit's <strong>Alpha Coach</strong> feature uses AI to analyze the user's weakest event
+    and generate a fully customized weekly training plan with specific exercises, sets, reps, and pacing
+    targeting that exact deficiency. No two users see the same workout plan, because no two midshipmen have
+    the same weaknesses.
+  </p>
+
+  <p>
+    Beyond the individual, Alpha Fit offers a <strong>Command View</strong> for unit leadership, enabling
+    squad leaders and commanding officers to monitor aggregate readiness across the battalion without
+    compromising individual privacy. This transforms a chaotic, spreadsheet driven process into a real time
+    situational picture of the unit's physical health.
+  </p>
+
+  <hr class="rule" />
+
+  <h2>Mockup Page Ideas</h2>
+
+  <div class="page-grid">
+    <div class="page-card">
+      <h4>Landing Page</h4>
+      <p>A bold, military inspired public entry point with a motivating tagline and a clear login/registration call-to-action. New users register with their UH email and self-identify as a midshipman or cadre member.</p>
+    </div>
+    <div class="page-card">
+      <h4>Midshipman Dashboard</h4>
+      <p>Features a readiness category badge (e.g., a green "EXCELLENT" label), a line chart plotting PRT scores over time, a countdown to the next official PRT date, and a motivational alert if a plateau or decline is detected.</p>
+    </div>
+    <div class="page-card">
+      <h4>Score Input Form</h4>
+      <p>A clean, mobile optimized form for logging PRT results. Fields include date, push-up reps, plank hold time, run time, and optional notes. Upon submission, the app instantly calculates the user's readiness category.</p>
+    </div>
+    <div class="page-card">
+      <h4>Alpha Coach</h4>
+      <p>Alpha Fit's signature feature. The AI identifies the user's weakest event and generates a structured, week by week training plan. For example, if the run is lacking, the plan might include interval sprints and heat-specific pacing tips for Honolulu.</p>
+    </div>
+    <div class="page-card" style="grid-column: 1 / -1;">
+      <h4>Command View (Admin/Cadre Role)</h4>
+      <p>A role-gated page for verified cadre members showing aggregate charts of unit readiness by tier, event-specific breakdowns, and a filterable roster by platoon or squad with individual scores anonymized by default to protect privacy.</p>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <h2>Use Case Ideas</h2>
+
+  <div class="use-case-list">
+    <div class="use-case">
+      <div class="icon">🏃</div>
+      <div>
+        <h4>New Score Logging</h4>
+        <p>It's 0630 on a Friday and the unit just finished a mock PRT on the UH Mānoa track. A midshipman opens Alpha Fit on their phone and logs their results. The app immediately shows them they've moved from "Good" to "Excellent" on push-ups, but their run is still holding them in "Satisfactory" overall. In 90 seconds, they have a complete picture of where they stand — no spreadsheet required.</p>
+      </div>
+    </div>
+    <div class="use-case">
+      <div class="icon">🤖</div>
+      <div>
+        <h4>Targeted Training via Alpha Coach</h4>
+        <p>A sophomore midshipman stuck in the "Good" category for three consecutive cycles opens Alpha Coach. It detects the plateau in their run time and generates a 6-week improvement plan: interval sessions, a weekly long run, and a tempo run, with mileage increases capped to prevent injury. Two PRT cycles later, they post a personal best.</p>
+      </div>
+    </div>
+    <div class="use-case">
+      <div class="icon">📊</div>
+      <div>
+        <h4>Unit Assessment by Leadership</h4>
+        <p>The NROTC Executive Officer is preparing for the official PRT two weeks out. She logs into Command View and sees that 40% of the unit is below "Good" on push-ups. She uses this data to schedule targeted PT sessions addressing that specific gap rather than running a generic full-body workout that doesn't move the needle.</p>
+      </div>
+    </div>
+    <div class="use-case">
+      <div class="icon">🎯</div>
+      <div>
+        <h4>Onboarding a New Midshipman</h4>
+        <p>A first-year MS-1 new to NROTC registers on Alpha Fit, enters their age and gender, and is immediately shown the score thresholds that apply to them. Before logging a single score, the standards are already concrete and personalized — making commissioning requirements feel achievable rather than abstract.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <h2>Beyond the Basics</h2>
+
+  <p>
+    To elevate Alpha Fit beyond the core requirements, future iterations could include:
+  </p>
+
+  <div class="future-grid">
+    <div class="future-card">
+      <h4>SMS/Email Notifications</h4>
+      <p>Automated reminders to log weekly workouts, with alerts when an official PRT window is approaching. Cadre members could receive a weekly summary digest showing unit logging activity.</p>
+    </div>
+    <div class="future-card">
+      <h4>Squad Leaderboards</h4>
+      <p>An opt-in competitive element ranking midshipmen or squads based on <em>PRT improvement</em> rather than raw scores, keeping the focus on progress and fostering the kind of camaraderie driven motivation central to military culture.</p>
+    </div>
+    <div class="future-card">
+      <h4>PRT Predictor</h4>
+      <p>Using a midshipman's historical rate of improvement, Alpha Fit projects what score they are on track to achieve at the next official PRT and tells them exactly how much they need to improve each week to hit a target category.</p>
+    </div>
+    <div class="future-card">
+      <h4>Google Calendar Integration</h4>
+      <p>Automatically sync Alpha Coach workout plans to the user's calendar, making it easy to block training time alongside classes, labs, and NROTC obligations.</p>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
