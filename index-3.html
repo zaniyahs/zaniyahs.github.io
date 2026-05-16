@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Za'Niyah Smith | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1D9E75;
+    --green-light: #E1F5EE;
+    --green-dark: #085041;
+    --teal-mid: #0F6E56;
+    --ink: #1a1a1a;
+    --ink-mid: #444;
+    --ink-soft: #777;
+    --surface: #f9f8f5;
+    --white: #ffffff;
+    --border: #e2e0d8;
+    --accent: #D85A30;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(249,248,245,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--ink-mid);
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green); }
+
+  /* HERO */
+  .hero {
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 88vh; max-width: 1200px; margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    align-items: center; gap: 4rem;
+  }
+  .hero-text h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+  }
+  .hero-text h1 em {
+    color: var(--green);
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--ink-mid);
+    max-width: 440px;
+    margin-bottom: 2rem;
+    line-height: 1.75;
+  }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+  .tag {
+    background: var(--green-light);
+    color: var(--teal-mid);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--green);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-primary:hover { background: var(--teal-mid); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1.5px solid var(--border);
+    color: var(--ink-mid);
+    padding: 0.8rem 1.8rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--green); color: var(--green); }
+  .hero-image {
+    display: flex; justify-content: center; align-items: center;
+  }
+  .avatar-frame {
+    width: 320px; height: 380px;
+    border-radius: 40px 8px 40px 8px;
+    overflow: hidden;
+    border: 3px solid var(--green-light);
+    position: relative;
+  }
+  .avatar-frame img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .avatar-bg {
+    width: 320px; height: 380px;
+    border-radius: 40px 8px 40px 8px;
+    background: linear-gradient(135deg, var(--green-light) 0%, #9FE1CB 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 6rem;
+    color: var(--green);
+    letter-spacing: -0.05em;
+  }
+  .social-row { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  .social-link {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; color: var(--ink-mid);
+    font-size: 0.8rem; font-weight: 700;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .social-link:hover { border-color: var(--green); color: var(--green); background: var(--green-light); }
+
+  /* SECTION WRAPPER */
+  section { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
+    color: var(--ink);
+  }
+  hr.section-divider {
+    border: none; border-top: 1px solid var(--border);
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; }
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+  .project-img {
+    width: 100%; height: 200px; object-fit: cover;
+    background: var(--green-light);
+  }
+  .project-img-placeholder {
+    width: 100%; height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+  }
+  .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+  .project-year {
+    font-size: 0.75rem; color: var(--ink-soft);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+  }
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+  .project-desc { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.65; flex: 1; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0; }
+  .project-tag {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    font-size: 0.72rem; font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .project-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: var(--green); font-weight: 600; font-size: 0.85rem;
+    text-decoration: none; margin-top: auto;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 0.65rem; }
+  .project-link::after { content: '→'; }
+
+  /* FEATURED PROJECT */
+  .featured-project {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .featured-inner { display: grid; grid-template-columns: 1fr 1fr; }
+  .featured-img-area {
+    background: var(--green-light);
+    min-height: 420px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 2rem;
+  }
+  .featured-screenshot {
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    width: 100%; max-width: 360px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .featured-screenshot-placeholder {
+    background: var(--white);
+    border-radius: 10px;
+    width: 100%; max-width: 360px;
+    height: 260px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
+    gap: 0.5rem;
+  }
+  .featured-screenshot-placeholder .app-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem; color: var(--green);
+  }
+  .featured-screenshot-placeholder p { font-size: 0.8rem; color: var(--ink-soft); }
+  .featured-body { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+  .featured-badge {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .featured-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem; color: var(--ink);
+  }
+  .featured-desc { font-size: 0.92rem; color: var(--ink-mid); line-height: 1.7; margin-bottom: 1.5rem; }
+  .detail-block { margin-bottom: 1.2rem; }
+  .detail-label {
+    font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--green); margin-bottom: 0.3rem;
+  }
+  .detail-text { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.6; }
+
+  /* ESSAYS */
+  .essays-list { display: flex; flex-direction: column; gap: 1.25rem; }
+  .essay-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    display: flex; align-items: flex-start; gap: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none; color: inherit;
+  }
+  .essay-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+  .essay-date-block {
+    min-width: 56px; text-align: center;
+    background: var(--green-light); border-radius: 10px;
+    padding: 0.5rem 0.4rem;
+  }
+  .essay-month { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-mid); }
+  .essay-year { font-size: 1.1rem; font-weight: 600; color: var(--green-dark); line-height: 1.2; }
+  .essay-content { flex: 1; }
+  .essay-title { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--ink); margin-bottom: 0.4rem; }
+  .essay-desc { font-size: 0.87rem; color: var(--ink-mid); line-height: 1.65; margin-bottom: 0.75rem; }
+  .essay-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .essay-tag {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--ink-soft); font-size: 0.7rem; font-weight: 500;
+    padding: 0.15rem 0.55rem; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .essay-arrow { color: var(--green); font-size: 1.1rem; align-self: center; }
+
+  /* RESUME */
+  #resume { background: var(--white); }
+  .resume-wrap { max-width: 800px; }
+  .resume-section { margin-bottom: 3rem; }
+  .resume-section-title {
+    font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--green);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .resume-entry { margin-bottom: 1.5rem; }
+  .resume-entry-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.25rem; }
+  .resume-role { font-weight: 600; font-size: 0.95rem; color: var(--ink); }
+  .resume-org { font-size: 0.88rem; color: var(--ink-mid); }
+  .resume-date { font-size: 0.8rem; color: var(--ink-soft); white-space: nowrap; }
+  .resume-bullets { margin-top: 0.5rem; padding-left: 1.2rem; }
+  .resume-bullets li { font-size: 0.88rem; color: var(--ink-mid); margin-bottom: 0.25rem; }
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--ink-mid);
+    font-size: 0.82rem; font-weight: 500;
+    padding: 0.3rem 0.85rem;
+    border-radius: 6px;
+  }
+  .skill-pill.highlight {
+    background: var(--green-light);
+    border-color: #9FE1CB;
+    color: var(--teal-mid);
+  }
+  .interests-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .interest-chip {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--ink-mid); font-size: 0.82rem;
+    padding: 0.3rem 0.85rem; border-radius: 6px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.82rem;
+  }
+  footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  footer a:hover { color: var(--green); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+  .about-text { font-size: 1rem; color: var(--ink-mid); line-height: 1.8; }
+  .about-text p + p { margin-top: 1rem; }
+  .about-stats { display: flex; flex-direction: column; gap: 1rem; }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem; color: var(--green);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.25rem; }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; }
+    .hero-image { display: none; }
+    .featured-inner { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .featured-img-area { min-height: 220px; }
+    section { padding: 3.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Za'Niyah Smith</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#essays">Essays</a></li>
+    <li><a href="#resume">Résumé</a></li>
+    <li><a href="mailto:Zaniyahs@hawaii.edu">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:4rem;">
+  <div class="hero-text">
+    <div class="tag-row">
+      <span class="tag">ICS @ UH Mānoa</span>
+      <span class="tag">Expected Spring 2027</span>
+    </div>
+    <h1>Za'Niyah Smith —<br><em>Builder, Defender,<br>Problem Solver.</em></h1>
+    <p class="hero-sub">Computer Science student at the University of Hawaiʻi at Mānoa with a focus on cybersecurity and full-stack development. I build software that matters and lead with intention.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#resume" class="btn-outline">See Résumé</a>
+    </div>
+    <div class="social-row">
+      <a href="http://github.com/zaniyahs" class="social-link" target="_blank" rel="noopener" title="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/za-niyah-smith-26baba3a8/" class="social-link" target="_blank" rel="noopener" title="LinkedIn">in</a>
+      <a href="mailto:Zaniyahs@hawaii.edu" class="social-link" title="Email">@</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="avatar-bg">ZS</div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">Background</p>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am a Computer Science student at the University of Hawaiʻi at Mānoa pursuing a B.S. degree, expected Spring 2027. My academic focus lies at the intersection of cybersecurity and software engineering — I am fascinated by how systems can be both elegantly built and rigorously defended.</p>
+      <p>My path to tech has been shaped by discipline and service. As a member of the Naval ROTC program at UH Mānoa, I helped establish traditions that didn't yet exist — including co-organizing the battalion's first-ever Navy Ball. That same "build from scratch" energy is what I bring to every software project I take on.</p>
+      <p>Outside the classroom, I am drawn to the ocean, science, and the challenge of solving problems that seem impossible at first. I believe the best engineers are relentlessly curious — and I try to live that out every day.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num">2027</div>
+        <div class="stat-label">Expected graduation</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">B.S.</div>
+        <div class="stat-label">Computer Science, UH Mānoa</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years of coding experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Work</p>
+  <h2 class="section-title">Projects</h2>
+
+  <!-- FEATURED: Rainbow Locator -->
+  <div class="featured-project">
+    <div class="featured-inner">
+      <div class="featured-img-area" style="flex-direction:column; gap:1rem; padding:1.5rem;">
+        <div style="display:flex; gap:1rem; width:100%; justify-content:center; align-items:flex-start;">
+          <img src="screenshot1.jpg" alt="Rainbow Locator homepage — Lost and found, designed to feel trustworthy" style="width:42%; border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,0.18); border:1px solid rgba(255,255,255,0.15);">
+          <img src="Screenshot_3.jpg" alt="Rainbow Locator — Create Account / Join the Rainbow Locator network page" style="width:42%; border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,0.18); border:1px solid rgba(255,255,255,0.15);">
+        </div>
+        <div style="display:flex; justify-content:center; width:100%;">
+          <img src="Screenshot_2.jpg" alt="Rainbow Locator — My Reports dashboard showing lost item listings with status badges" style="width:52%; border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,0.18); border:1px solid rgba(255,255,255,0.15);">
+        </div>
+      </div>
+      <div class="featured-body">
+        <span class="featured-badge">ICS 314 Final Project</span>
+        <h3 class="featured-title">Rainbow Locator</h3>
+        <p class="featured-desc">A centralized lost-and-found web platform for the University of Hawaiʻi at Mānoa campus, designed to help students, faculty, and staff report missing belongings, browse verified listings, and reconnect items with their rightful owners.</p>
+
+        <div class="detail-block">
+          <div class="detail-label">My Contributions</div>
+          <div class="detail-text">I contributed to the full-stack development of the platform, working on item reporting flows, UI components using React and Bootstrap 5, and writing end-to-end Playwright tests. I also helped shape the product design decisions around how claims and item statuses would be tracked and displayed.</div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">What I Learned</div>
+          <div class="detail-text">Working in a team using Agile methods and GitHub project boards taught me how to collaborate effectively on a real codebase. I deepened my skills in Next.js, TypeScript, Prisma ORM, and test-driven development — and gained hands-on experience shipping a production-ready application.</div>
+        </div>
+        <div class="project-tags" style="margin-bottom:1.25rem;">
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag">TypeScript</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Prisma</span>
+          <span class="project-tag">React</span>
+          <span class="project-tag">Bootstrap 5</span>
+          <span class="project-tag">Playwright</span>
+        </div>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="https://rainbowlocator.vercel.app" class="project-link" target="_blank" rel="noopener">Live App</a>
+          <a href="https://github.com/pacificbytes/rainbow-locator" class="project-link" target="_blank" rel="noopener">GitHub Org</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other projects -->
+  <div class="projects-grid">
+    <!-- Community Service -->
+    <div class="project-card">
+      <div class="project-img-placeholder" style="background:#FFF5F2;">
+        <img src="https://zaniyahs.github.io/img/gifts.png" alt="Donte's Gift Express community event — stacks of wrapped Christmas gifts" class="project-img" style="height:200px;object-fit:cover;width:100%;" onerror="this.parentElement.innerHTML='<div style=&quot;height:200px;display:flex;align-items:center;justify-content:center;background:#FFF5F2;font-size:3rem;&quot;>🎁</div>'">
+      </div>
+      <div class="project-body">
+        <div class="project-year">2025</div>
+        <h3 class="project-title">Giving Back to the Community</h3>
+        <p class="project-desc">Joined the finance committee for Donte's Gift Express — a three-day annual event in East Cleveland that delivers Christmas gifts to families in need. Managed budget allocation to maximize toy purchasing while covering volunteer logistics.</p>
+        <div class="project-tags">
+          <span class="project-tag">Community Service</span>
+          <span class="project-tag">Finance</span>
+          <span class="project-tag">Nonprofit</span>
+        </div>
+        <a href="greatest.html" class="project-link">Read More</a>
+      </div>
+    </div>
+
+    <!-- Navy Ball -->
+    <div class="project-card">
+      <div class="project-img-placeholder" style="background:#F0F4FF;">
+        <img src="https://zaniyahs.github.io/img/ball.PNG" alt="Navy Ball event — formal military dinner with attendees in dress uniform" class="project-img" style="height:200px;object-fit:cover;width:100%;" onerror="this.parentElement.innerHTML='<div style=&quot;height:200px;display:flex;align-items:center;justify-content:center;background:#F0F4FF;font-size:3rem;&quot;>🎖️</div>'">
+      </div>
+      <div class="project-body">
+        <div class="project-year">2023</div>
+        <h3 class="project-title">First UH Mānoa Navy Ball</h3>
+        <p class="project-desc">Helped organize and plan the very first Navy Ball for the UH Mānoa NROTC battalion — a formal event with no playbook or precedent. Coordinated food, music, and décor for a full military formal dinner attended by the entire unit.</p>
+        <div class="project-tags">
+          <span class="project-tag">Event Planning</span>
+          <span class="project-tag">Leadership</span>
+          <span class="project-tag">NROTC</span>
+        </div>
+        <a href="great.html" class="project-link">Read More</a>
+      </div>
+    </div>
+
+    <!-- Basketball -->
+    <div class="project-card">
+      <div class="project-img-placeholder" style="background:#F5FAEE;">
+        <img src="https://zaniyahs.github.io/img/IMG_6632.jpeg" alt="Basketball team celebrating a championship victory" class="project-img" style="height:200px;object-fit:cover;width:100%;" onerror="this.parentElement.innerHTML='<div style=&quot;height:200px;display:flex;align-items:center;justify-content:center;background:#F5FAEE;font-size:3rem;&quot;>🏆</div>'">
+      </div>
+      <div class="project-body">
+        <div class="project-year">2022</div>
+        <h3 class="project-title">Team Captain — League Champions</h3>
+        <p class="project-desc">Led my high school basketball team as captain during our championship-winning season. Rebuilt a struggling program over four years through coaching changes, injuries, and relentless team culture — ultimately winning the league trophy.</p>
+        <div class="project-tags">
+          <span class="project-tag">Leadership</span>
+          <span class="project-tag">Athletics</span>
+          <span class="project-tag">Team Building</span>
+        </div>
+        <a href="greater.html" class="project-link">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ESSAYS -->
+<section id="essays">
+  <p class="section-label">Writing</p>
+  <h2 class="section-title">Essays</h2>
+  <div class="essays-list">
+
+    <a href="https://zaniyahs.github.io/essays/More%20Than%20a%20Website.html" class="essay-card" target="_blank" rel="noopener">
+      <div class="essay-date-block">
+        <div class="essay-month">May</div>
+        <div class="essay-year">2026</div>
+      </div>
+      <div class="essay-content">
+        <div class="essay-title">More Than a Website</div>
+        <p class="essay-desc">A reflection on what ICS 314 actually taught me — beyond syntax and frameworks. Covers lessons in Agile project management, design patterns, UI frameworks, and what it means to build software as a team.</p>
+        <div class="essay-tags">
+          <span class="essay-tag">Software Engineering</span>
+          <span class="essay-tag">Agile</span>
+          <span class="essay-tag">Design Patterns</span>
+          <span class="essay-tag">UI Frameworks</span>
+        </div>
+      </div>
+      <div class="essay-arrow">→</div>
+    </a>
+
+    <a href="https://zaniyahs.github.io/essays/effort-estimation.html" class="essay-card" target="_blank" rel="noopener">
+      <div class="essay-date-block">
+        <div class="essay-month">May</div>
+        <div class="essay-year">2026</div>
+      </div>
+      <div class="essay-content">
+        <div class="essay-title">Estimating the Unestimatable: My Honest Experience with Effort Tracking on Rainbow Locator</div>
+        <p class="essay-desc">An honest look at effort estimation during the Rainbow Locator project — what I thought it would take, what it actually took, and what that gap revealed about planning in software development.</p>
+        <div class="essay-tags">
+          <span class="essay-tag">Software Engineering</span>
+          <span class="essay-tag">Next.js</span>
+          <span class="essay-tag">React</span>
+          <span class="essay-tag">Bootstrap 5</span>
+        </div>
+      </div>
+      <div class="essay-arrow">→</div>
+    </a>
+
+    <a href="https://zaniyahs.github.io/essays/Alpha-Fit-proposal.html" class="essay-card" target="_blank" rel="noopener">
+      <div class="essay-date-block">
+        <div class="essay-month">Apr</div>
+        <div class="essay-year">2026</div>
+      </div>
+      <div class="essay-content">
+        <div class="essay-title">Final Project Proposal: Alpha Fit</div>
+        <p class="essay-desc">A project proposal for Alpha Fit — a physical readiness tracker designed for military personnel at UH Mānoa, where maintaining peak fitness is a non-negotiable standard.</p>
+        <div class="essay-tags">
+          <span class="essay-tag">Software Engineering</span>
+          <span class="essay-tag">Next.js</span>
+          <span class="essay-tag">React</span>
+          <span class="essay-tag">Bootstrap 5</span>
+        </div>
+      </div>
+      <div class="essay-arrow">→</div>
+    </a>
+
+    <a href="https://zaniyahs.github.io/essays/ui-frameworks.html" class="essay-card" target="_blank" rel="noopener">
+      <div class="essay-date-block">
+        <div class="essay-month">Jan</div>
+        <div class="essay-year">2025</div>
+      </div>
+      <div class="essay-content">
+        <div class="essay-title">The Scaffolding Beneath the Surface: Why UI Frameworks Are Worth It</div>
+        <p class="essay-desc">A technical essay exploring why UI frameworks like Bootstrap 5, Semantic UI, and Tailwind CSS are more than shortcuts — and why learning them deeply makes you a better engineer, not a lazier one.</p>
+        <div class="essay-tags">
+          <span class="essay-tag">Bootstrap 5</span>
+          <span class="essay-tag">Semantic UI</span>
+          <span class="essay-tag">Tailwind CSS</span>
+          <span class="essay-tag">Software Engineering</span>
+        </div>
+      </div>
+      <div class="essay-arrow">→</div>
+    </a>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- RESUME -->
+<section id="resume" style="background:var(--white); max-width:100%; padding:5rem 0;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 2rem;">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">Résumé</h2>
+    <div class="resume-wrap">
+
+      <!-- Skills -->
+      <div class="resume-section">
+        <div class="resume-section-title">Technical Skills</div>
+        <div class="skills-grid">
+          <span class="skill-pill highlight">JavaScript</span>
+          <span class="skill-pill highlight">TypeScript</span>
+          <span class="skill-pill highlight">React</span>
+          <span class="skill-pill highlight">Next.js</span>
+          <span class="skill-pill highlight">PostgreSQL</span>
+          <span class="skill-pill">C</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">Assembly</span>
+          <span class="skill-pill">Common Lisp</span>
+          <span class="skill-pill">Bootstrap 5</span>
+          <span class="skill-pill">Prisma ORM</span>
+          <span class="skill-pill">Git / GitHub</span>
+          <span class="skill-pill">macOS</span>
+          <span class="skill-pill">Ubuntu</span>
+          <span class="skill-pill">Playwright</span>
+          <span class="skill-pill">Agile / Scrum</span>
+        </div>
+      </div>
+
+      <!-- Interests -->
+      <div class="resume-section">
+        <div class="resume-section-title">Interests</div>
+        <div class="interests-grid">
+          <span class="interest-chip">Cybersecurity</span>
+          <span class="interest-chip">Naval Science (NCIS)</span>
+          <span class="interest-chip">Ocean Science</span>
+          <span class="interest-chip">Software Engineering</span>
+          <span class="interest-chip">Full-Stack Development</span>
+          <span class="interest-chip">Community Service</span>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="resume-section">
+        <div class="resume-section-title">Education</div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <div class="resume-role">B.S. in Computer Science</div>
+              <div class="resume-org">University of Hawaiʻi at Mānoa — Honolulu, HI</div>
+            </div>
+            <div class="resume-date">Expected Spring 2027</div>
+          </div>
+          <ul class="resume-bullets">
+            <li>Department of Information and Computer Sciences</li>
+            <li>Relevant coursework: Software Engineering (ICS 314), Data Structures, Algorithms, Security</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="resume-section">
+        <div class="resume-section-title">Experience</div>
+
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <div class="resume-role">Software Engineering Student — ICS 314</div>
+              <div class="resume-org">University of Hawaiʻi at Mānoa</div>
+            </div>
+            <div class="resume-date">Spring 2026</div>
+          </div>
+          <ul class="resume-bullets">
+            <li>Built Rainbow Locator, a full-stack lost-and-found platform for the UH Mānoa campus using Next.js, TypeScript, PostgreSQL, and Prisma ORM</li>
+            <li>Collaborated in an Agile team using GitHub project boards, issue tracking, and milestone-based sprints</li>
+            <li>Wrote Playwright end-to-end tests and contributed to CI/CD pipeline configuration</li>
+          </ul>
+        </div>
+
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <div class="resume-role">Finance Committee Volunteer</div>
+              <div class="resume-org">Donte's Gift Express (Nonprofit)</div>
+            </div>
+            <div class="resume-date">2025</div>
+          </div>
+          <ul class="resume-bullets">
+            <li>Managed fundraising and budget allocation for a three-day community Christmas gift drive serving families in East Cleveland, OH</li>
+            <li>Coordinated with vendors and community partners to maximize impact within budget constraints</li>
+          </ul>
+        </div>
+
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <div class="resume-role">NROTC Midshipman / Event Organizer</div>
+              <div class="resume-org">University of Hawaiʻi at Mānoa Naval ROTC</div>
+            </div>
+            <div class="resume-date">2023 – Present</div>
+          </div>
+          <ul class="resume-bullets">
+            <li>Co-organized the battalion's inaugural Navy Ball, coordinating food, music, décor, and logistics for a formal military event with no prior precedent</li>
+            <li>Contributed to establishing unit traditions and culture as a member of one of the youngest NROTC programs at UH Mānoa</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Activities -->
+      <div class="resume-section">
+        <div class="resume-section-title">Activities &amp; Leadership</div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div>
+              <div class="resume-role">Team Captain — Varsity Basketball</div>
+              <div class="resume-org">High School Athletics</div>
+            </div>
+            <div class="resume-date">2022</div>
+          </div>
+          <ul class="resume-bullets">
+            <li>Led team to a league championship after rebuilding a program that had not reached the finals in over a decade</li>
+            <li>Named team captain in junior year; recognized for defensive leadership and team culture</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Download -->
+      <div style="margin-top:2.5rem;">
+        <a href="mailto:Zaniyahs@hawaii.edu" class="btn-primary" style="display:inline-block;">Request Full Résumé PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:0.5rem;">Za'Niyah Smith &nbsp;·&nbsp; <a href="mailto:Zaniyahs@hawaii.edu">Zaniyahs@hawaii.edu</a> &nbsp;·&nbsp; Honolulu, Hawaiʻi</p>
+  <p><a href="http://github.com/zaniyahs" target="_blank" rel="noopener">GitHub</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/za-niyah-smith-26baba3a8/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://zaniyahs.github.io" target="_blank" rel="noopener">zaniyahs.github.io</a></p>
+</footer>
+
+</body>
+</html>
